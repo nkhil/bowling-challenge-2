@@ -12,6 +12,10 @@ class Frame {
     return this.totalScore;
   }
 
+  isStrike(){
+    return this.rollOne === 10
+  }
+
 }
 
 module.exports = Frame;
