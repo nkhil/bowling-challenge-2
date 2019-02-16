@@ -3,9 +3,11 @@ describe('Frame', () => {
   
   const Frame = require('../src/frame')
   let frame;
+  let game;
   
   beforeEach(() => {
-    frame = new Frame();
+    game = jasmine.createSpyObj('game',['frames', 'frameNumber']);
+    frame = new Frame(game);
   });
   
   describe('calculateScore', () => {
@@ -16,7 +18,7 @@ describe('Frame', () => {
       expect(frame.totalScore).toEqual(2);
     });
 
-    it('calculates a frame with a strike', () => {
+    it('calculates a frame score with a strike', () => {
       frame.rollOne = 10;
       frame.calculateScore();
       expect(frame.totalScore).toEqual(10);
@@ -37,5 +39,14 @@ describe('Frame', () => {
       expect(frame.isSpare()).toEqual(true);
     });
   });
+
+  // describe('frameNumber', () => {
+  //   it('returns the frame number for that instance', () => {
+  //     // const frames = game.frames
+  //     // (game.framenumber(frame)).and.returnValue(1);
+  //     ((game.frames).indexOf(frame)).and.returnValue(1);
+  //     expect(frame.frameNumber()).toEqual(1)
+  //   });
+  // });
 
 });
