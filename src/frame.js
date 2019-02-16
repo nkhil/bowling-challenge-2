@@ -2,12 +2,17 @@
 
 class Frame {
   constructor(){
-    this.rollOne = null;
-    this.rollTwo = null;
-    this.totalScore = null;
+    this.rollOne = 0;
+    this.rollTwo = 0;
+    this.totalScore = 0;
   }
 
-  calculateScore(rollOne, rollTwo){
+  calculateScore(){
+    const rollOne = this.rollOne;
+    const rollTwo = this.rollTwo;
+    if(this.isStrike()){
+      this.totalScore = 10;
+    }
     this.totalScore =  rollOne + rollTwo;
     return this.totalScore;
   }
