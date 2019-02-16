@@ -10,8 +10,16 @@ describe('Frame', () => {
   
   describe('calculateScore', () => {
     it('calculates a non-bonus score', () => {
-      frame.calculateScore(1, 1)
+      frame.rollOne = 1;
+      frame.rollTwo = 1;
+      frame.calculateScore()
       expect(frame.totalScore).toEqual(2);
+    });
+
+    it('calculates a frame with a strike', () => {
+      frame.rollOne = 10;
+      frame.calculateScore();
+      expect(frame.totalScore).toEqual(10);
     });
   });
 
