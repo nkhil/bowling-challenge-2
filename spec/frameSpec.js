@@ -15,4 +15,12 @@ describe('Frame', () => {
     });
   });
 
+  describe('isStrike', () => {
+    it('checks if it is a strike', () => {
+      frame.rollOne = 10;
+      frame.rollTwo = 0;
+      expect(frame.isStrike()).toEqual(true);
+    });
+  });
+
 });
