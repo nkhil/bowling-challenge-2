@@ -49,6 +49,19 @@ describe('Feature test: The app', () => {
     expect(scoreCard.gameScore).toEqual(26);  
   });
 
+  it('can score 3 spares in a row', () => {
+    scoreCard.frames[0].rollOne = 6;
+    scoreCard.frames[0].rollTwo = 4;
+    scoreCard.frames[1].rollOne = 5;
+    scoreCard.frames[1].rollTwo = 5;
+    scoreCard.frames[2].rollOne = 8;
+    scoreCard.frames[2].rollTwo = 2;
+
+    scoreCard.getFrameScores();
+    scoreCard.calculateTotalScore();
+    expect(scoreCard.gameScore).toEqual(33);
+  });
+
   
 
 });
