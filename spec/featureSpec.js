@@ -24,13 +24,22 @@ describe('Feature test: The app', () => {
     scoreCard.frames[1].calculateScore();
     scoreCard.frames[2].calculateScore();
     expect(scoreCard.frames[0].totalScore).toEqual(30);
-    
+
     scoreCard.getFrameScores();
     scoreCard.calculateTotalScore();
     expect(scoreCard.gameScore).toEqual(30);
   });
 
-  // it('can score a game with ')
+  it('can score a game with a spare', () => {
+    scoreCard.frames[0].rollOne = 6;
+    scoreCard.frames[0].rollTwo = 4;
+    scoreCard.frames[1].rollOne = 5;
+    
+    scoreCard.getFrameScores();
+    console.log(scoreCard.frames[0]);
+    scoreCard.calculateTotalScore();
+    expect(scoreCard.gameScore).toEqual(15);    
+  });
 
   
 
