@@ -36,7 +36,6 @@ describe('Feature test: The app', () => {
     scoreCard.frames[1].rollOne = 5;
     
     scoreCard.getFrameScores();
-    console.log(scoreCard.frames[0]);
     scoreCard.calculateTotalScore();
     expect(scoreCard.gameScore).toEqual(15);    
   });

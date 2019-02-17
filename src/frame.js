@@ -70,14 +70,26 @@ class Frame {
     return this.nextNextFrame().rollOne !== null;
   }
 
+  bothRollsPlayed(){
+    this.rollOne !== null && this.rollTwo !== null;
+  }
+
+  framePlayed(){
+    return this.isStrike() || this.isSpare() || this.bothRollsPlayed();
+  }
+
   calculateScore(){
-    if(this.isStrike()){
-      this.handleStrike();
-    } else if(this.isSpare()){
-      this.handleSpare();
-    } else {
-      this.totalScore = this.total();
-    }
+    if(this.framePlayed()){
+
+      if(this.isStrike()){
+        this.handleStrike();
+      } else if(this.isSpare()){
+        this.handleSpare();
+      } else {
+        this.totalScore = this.total();
+      }
+
+    }    
     return this.totalScore;
   }
 
