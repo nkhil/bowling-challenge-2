@@ -39,8 +39,9 @@ class ScoreCard {
     this.frameScoreArray.reduce((a,b,i) => { 
       return this.cumulativeScores[i] = a+b; 
     },0);
+    return this.cumulativeScores;
   }
-  
+
 }
 
 module.exports = ScoreCard;
