@@ -82,13 +82,13 @@ class Frame {
   }
 
   handleStrike(){
-    if(this.nextFrame().isStrike() && this.nextNextFrame().isStrike() && this.nextNextFramePlayed()){
+    if(this.nextFrame().isStrike() && this.nextNextFrame().isStrike()){
       this.totalScore = 30;
     } else if(this.nextFrame().isStrike() && this.nextNextFramePlayed()){
       this.totalScore = 20 + nextNextFrame().rollOne;
-    } else if(this.nextFrame().isSpare() && this.nextFramePlayed()){
+    } else if(this.nextFrame().isSpare()){
       this.totalScore = 20;
-    } else if(this.nextFramePlayed()) {
+    } else if(this.nextFramePlayed() && this.nextNextFramePlayed()) {
       this.totalScore = 10 + this.nextFrame().total();
     }    
   }
