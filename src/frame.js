@@ -71,7 +71,7 @@ class Frame {
   }
 
   bothRollsPlayed(){
-    this.rollOne !== null && this.rollTwo !== null;
+    return this.rollOne != null && this.rollTwo != null;
   }
 
   framePlayed(){
