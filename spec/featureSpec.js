@@ -11,10 +11,12 @@ describe('Feature test: The app', () => {
       scoreCard.frames[i].rollOne = 0;
       scoreCard.frames[i].rollTwo = 0;
     }
-
+    scoreCard.getFrameScores();
     scoreCard.calculateTotalScore();
     expect(scoreCard.gameScore).toEqual(0)
 
   });
+
+  
 
 });
