@@ -87,6 +87,35 @@ describe('Feature test: The app', () => {
     scoreCard.calculateTotalScore();
     expect(scoreCard.gameScore).toEqual(103);
   });
+
+  it('can score another entire game with strikes and spares', () => {
+    scoreCard.frames[0].rollOne = 2;
+    scoreCard.frames[0].rollTwo = 6;
+    scoreCard.frames[1].rollOne = 10;
+    scoreCard.frames[1].rollTwo = 0;
+    scoreCard.frames[2].rollOne = 7;
+    scoreCard.frames[2].rollTwo = 3;
+    scoreCard.frames[3].rollOne = 6;
+    scoreCard.frames[3].rollTwo = 4;
+    scoreCard.frames[4].rollOne = 4;
+    scoreCard.frames[4].rollTwo = 3;
+    scoreCard.frames[5].rollOne = 10;
+    scoreCard.frames[6].rollOne = 5;
+    scoreCard.frames[6].rollTwo = 5;
+    scoreCard.frames[7].rollOne = 2;
+    scoreCard.frames[7].rollTwo = 1;
+    scoreCard.frames[8].rollOne = 6;
+    scoreCard.frames[8].rollTwo = 3;
+    scoreCard.frames[9].rollOne = 10;
+    scoreCard.frames[9].rollTwo = 2;
+    scoreCard.frames[9].rollThree = 5;
+
+    scoreCard.getFrameScores();
+    
+    scoreCard.calculateTotalScore();
+    expect(scoreCard.gameScore).toEqual(126);
+  });
+  
   
 
 });
