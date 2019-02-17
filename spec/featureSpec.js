@@ -88,7 +88,7 @@ describe('Feature test: The app', () => {
     expect(scoreCard.gameScore).toEqual(103);
   });
 
-  it('can score another entire game with strikes and spares', () => {
+  it('can score a game with 3 rolls in the last frame', () => {
     scoreCard.frames[0].rollOne = 2;
     scoreCard.frames[0].rollTwo = 6;
     scoreCard.frames[1].rollOne = 10;
@@ -112,7 +112,7 @@ describe('Feature test: The app', () => {
 
     scoreCard.getFrameScores();
     
-    scoreCard.calculateTotalScore();
+    scoreCard.calculateTotalScore();    
     expect(scoreCard.gameScore).toEqual(126);
   });
   
