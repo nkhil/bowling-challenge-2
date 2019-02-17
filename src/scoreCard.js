@@ -8,6 +8,7 @@ class ScoreCard {
   constructor(){
     this.gameScore = null;
     this.frameScoreArray = [];
+    this.cumulativeScores = [];
     let frame1, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10
     this.frames = [
       frame1 = new Frame(this),
@@ -34,8 +35,12 @@ class ScoreCard {
     }, 0);
   }
 
-
-
+  calculateCumulativeScores(){
+    this.frameScoreArray.reduce((a,b,i) => { 
+      return this.cumulativeScores[i] = a+b; 
+    },0);
+  }
+  
 }
 
 module.exports = ScoreCard;
