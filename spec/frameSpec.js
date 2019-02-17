@@ -9,20 +9,23 @@ describe('Frame', () => {
     game = jasmine.createSpyObj('game',['frames', 'frameNumber']);
     frame = new Frame(game);
   });
+
+  describe('total', () => {
+    it('calculates the correct total for a non-bonus frame', () => {
+      frame.rollOne = 5;
+      frame.rollTwo = 3;
+      expect(frame.total()).toEqual(8);
+    });
+  });
   
   describe('calculateScore', () => {
     it('calculates a non-bonus score', () => {
       frame.rollOne = 1;
       frame.rollTwo = 1;
       frame.calculateScore()
-      expect(frame.totalScore).toEqual(2);
+      expect(frame.total()).toEqual(2);
     });
 
-    it('calculates a frame score with a strike', () => {
-      frame.rollOne = 10;
-      frame.calculateScore();
-      expect(frame.totalScore).toEqual(10);
-    });
   });
 
   describe('isStrike', () => {
