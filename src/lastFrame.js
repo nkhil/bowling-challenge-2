@@ -2,10 +2,10 @@
 
 class LastFrame {
   constructor(game){
-    this.rollOne = 0;
-    this.rollTwo = 0;
-    this.rollThree = 0;
-    this.totalScore = 0;
+    this.rollOne = null;
+    this.rollTwo = null;
+    this.rollThree = null;
+    this.totalScore = null;
     this.game = game;
   }
 
