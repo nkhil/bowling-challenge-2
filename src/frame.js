@@ -97,7 +97,7 @@ class Frame {
     if(this.nextFrame().isStrike() && this.nextNextFrame().isStrike()){
       this.totalScore = 30;
     } else if(this.nextFrame().isStrike() && this.nextNextFramePlayed()){
-      this.totalScore = 20 + nextNextFrame().rollOne;
+      this.totalScore = 20 + this.nextNextFrame().rollOne;
     } else if(this.nextFrame().isSpare()){
       this.totalScore = 20;
     } else if(this.nextFramePlayed() && this.nextNextFramePlayed()) {
