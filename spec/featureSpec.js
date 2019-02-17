@@ -40,6 +40,15 @@ describe('Feature test: The app', () => {
     expect(scoreCard.gameScore).toEqual(15);    
   });
 
+  it('can score a game with 2 strikes and a single non-bonus roll', () => {
+    scoreCard.frames[0].rollOne = 10;
+    scoreCard.frames[1].rollOne = 10;
+    scoreCard.frames[2].rollOne = 6;
+    scoreCard.getFrameScores();
+    scoreCard.calculateTotalScore();
+    expect(scoreCard.gameScore).toEqual(26);  
+  });
+
   
 
 });
