@@ -19,6 +19,7 @@ class ScoreCard {
       frame7 = new Frame(this),
       frame8 = new Frame(this),
       frame9 = new Frame(this),
+      // frame10 = new Frame(this),
       frame10 = new LastFrame(this)
     ];
   }
@@ -28,7 +29,9 @@ class ScoreCard {
   }
 
   calculateTotalScore(){
-    this.gameScore = this.frameScoreArray.reduce((sum, num) => sum + num);
+    this.gameScore = this.frameScoreArray.reduce((sum, num) => {
+      return sum + num
+    }, 0);
   }
 
 
