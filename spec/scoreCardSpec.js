@@ -27,6 +27,14 @@ describe('ScoreCard', () => {
     })
   });
 
+  describe('calculateCumulativeScores', () => {
+    it('can calculate the score at the end of each frame', () => {
+      scoreCard.frameScoreArray = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      scoreCard.calculateCumulativeScores();
+      expect(scoreCard.cumulativeScores).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    });
+  })
+
   
 
 });
