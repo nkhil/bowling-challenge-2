@@ -26,6 +26,8 @@ As I'm using JavaScript in an object-oriented way, I decided that objects should
 
 **Domain Model:**
 
+[![bowling-domain-model.png](https://i.postimg.cc/3xPWHFQT/bowling-domain-model.png)](https://postimg.cc/LJ3mtfsC)
+
 - **ScoreCard class**
 This will 'contain' the frames, as well as know the score of each frame. Naturally, it is able to calculate the total score of a game (on-going or completed).
 
