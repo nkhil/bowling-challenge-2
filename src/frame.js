@@ -81,7 +81,9 @@ class Frame {
   calculateScore(){
     if(this.framePlayed()){
 
-      if(this.isStrike()){
+      if(this.frameNumber() === 8){
+        this.handleFrameNine();
+      } else if(this.isStrike()){
         this.handleStrike();
       } else if(this.isSpare()){
         this.handleSpare();
@@ -111,7 +113,27 @@ class Frame {
     } else if(this.nextFrameRollOnePlayed()) {
       this.totalScore = 10 + this.nextFrame().rollOne;
     }
-  } 
+  }
+  
+  handleFrameNine(){
+    if(this.isStrike()){
+      this.handleFrameNineStrike();
+    } else if(this.isSpare()){
+      this.totalScore = 10 + this.nextFrame().rollOne;
+    } else {
+      this.totalScore = this.total();
+    }
+  }
+
+  handleFrameNineStrike(){
+    if(this.nextFrame().rollOne === 10 && this.nextFrame().rollTwo === 10){
+      this.totalScore = 30;
+    } else if(this.nextFrame().rollOne === 10){
+      this.totalScore = 20 + this.nextFrame().rollTwo;
+    } else {
+      this.totalScore = 10 + this.nextFrame().rollOne + this.nextFrame().rollTwo;
+    }
+  }
 
 
 }
