@@ -115,6 +115,35 @@ describe('Feature test: The app', () => {
     scoreCard.calculateTotalScore();    
     expect(scoreCard.gameScore).toEqual(126);
   });
+
+  it('can score a game with a strike in frame 9', () => {
+    scoreCard.frames[0].rollOne = 1;
+    scoreCard.frames[0].rollTwo = 1;
+    scoreCard.frames[1].rollOne = 1;
+    scoreCard.frames[1].rollTwo = 1;
+    scoreCard.frames[2].rollOne = 1;
+    scoreCard.frames[2].rollTwo = 1;
+    scoreCard.frames[3].rollOne = 1;
+    scoreCard.frames[3].rollTwo = 1;
+    scoreCard.frames[4].rollOne = 1;
+    scoreCard.frames[4].rollTwo = 1;
+    scoreCard.frames[5].rollOne = 1;
+    scoreCard.frames[5].rollTwo = 1;
+    scoreCard.frames[6].rollOne = 1;
+    scoreCard.frames[6].rollTwo = 1;
+    scoreCard.frames[7].rollOne = 1;
+    scoreCard.frames[7].rollTwo = 1;
+    scoreCard.frames[8].rollOne = 10;
+    scoreCard.frames[8].rollTwo = 0;
+    scoreCard.frames[9].rollOne = 10;
+    scoreCard.frames[9].rollTwo = 10;
+    scoreCard.frames[9].rollThree = 10;
+
+    scoreCard.getFrameScores();
+    
+    scoreCard.calculateTotalScore();    
+    expect(scoreCard.gameScore).toEqual(76);
+  });
   
   
 
