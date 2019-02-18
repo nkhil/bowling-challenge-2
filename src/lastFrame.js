@@ -22,8 +22,6 @@ class LastFrame {
   }
 
   isSpare(roll1, roll2){
-    const rollOne = this.rollOne;
-    const rollTwo = this.rollTwo;
     return roll1 + roll2 === 10 && rollTwo !== null;
   }
 
@@ -67,9 +65,11 @@ class LastFrame {
   handleRollOneStrike(){
     if(this.rollTwoIsStrike() && this.rollThreeIsStrike()){
       this.totalScore = 30;
-    } else if(this.rollTwoIsStrike()){
-      this.totalScore = 20 + this.rollThree;
-    } else {
+    } 
+    // else if(this.rollTwoIsStrike()){
+    //   this.totalScore = 20 + this.rollThree;
+    // } 
+    else {
       this.totalScore = 10 + this.rollTwo + this.rollThree;
     }
   }
