@@ -39,7 +39,7 @@ As the final frame in bowling has special rules, I decided to separate this out 
 
 ### Algorithm
 
-[![bowling-challenge.png](https://i.postimg.cc/25RnrBPP/bowling-challenge.png)](https://postimg.cc/CR7R4dMN)
+[![bowling-challenge.jpg](https://i.postimg.cc/K8nR7pHH/bowling-challenge.jpg)](https://postimg.cc/zyGz875C)
 
 ### Accessing the state of other frames
 
