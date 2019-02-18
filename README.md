@@ -37,6 +37,10 @@ The frame is aware of its rolls, as well as its score. However, as the score dep
 - **Final Frame class**
 As the final frame in bowling has special rules, I decided to separate this out following single responsibility. This class contains the unique logic for the final frame. 
 
+### Algorithm
+
+[![bowling-challenge.png](https://i.postimg.cc/25RnrBPP/bowling-challenge.png)](https://postimg.cc/CR7R4dMN)
+
 ### Accessing the state of other frames
 
 The `Frame` class is instantiated along with the `ScoreCard` it is a part of. This means that every instance of frame is aware of the instance of `ScoreCard` it belongs to. 
