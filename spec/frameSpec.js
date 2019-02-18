@@ -2,16 +2,18 @@
 describe('Frame', () => {
   
   const Frame = require('../src/frame')
+  const ScoreCard = require('../src/scoreCard')
   let frame;
   let game;
   
   beforeEach(() => {
-    game = jasmine.createSpyObj('game',['frames', 'frameNumber']);
+    // game = jasmine.createSpyObj('game',['frames', 'frameNumber']);
+    game = new ScoreCard();
     frame = new Frame(game);
   });
 
   describe('total', () => {
-    it('calculates the correct total for a non-bonus frame', () => {
+    it('calculates the correct total', () => {
       frame.rollOne = 5;
       frame.rollTwo = 3;
       expect(frame.total()).toEqual(8);
@@ -23,7 +25,7 @@ describe('Frame', () => {
       frame.rollOne = 1;
       frame.rollTwo = 1;
       frame.calculateScore()
-      expect(frame.total()).toEqual(2);
+      expect(frame.totalScore).toEqual(2);
     });
 
   });
